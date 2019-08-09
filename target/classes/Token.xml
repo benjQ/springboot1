@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.springboot.mapper.TokenMapper">
+    <select id="findByUserId" parameterType="int" resultType="Token">
+        select * from token where userid=#{userid}
+    </select>
+    <insert id="addToken" parameterType="Token">
+        insert into token values (#{tokenid},#{userid},#{token},#{buildtime})
+    </insert>
+    <update id="updateToken" parameterType="Token">
+        update token set token=#{token},buildtime=#{buildtime} where userid=#{userid}
+    </update>
+
+</mapper>

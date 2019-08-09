@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.springboot.mapper.CategoryMapper">
+    <select id="findAll" resultType="Category">
+            select * from category_
+        </select>
+    <select id="findById" parameterType="int" resultType="Category">
+        select * from category_ where id= #{id}
+    </select>
+    <insert id="insert" parameterType="Category">
+        insert into category_ values (#{id},#{name})
+    </insert>
+    <delete id="delete" parameterType="int">
+        delete from category_ where id= #{id}
+    </delete>
+    <update id="update" parameterType="Category">
+        update category_ set name=#{name} where id=#{id}
+    </update>
+    <select id="login" parameterType="User" resultType="User">
+        select * from user where username= #{username}
+    </select>
+</mapper>
